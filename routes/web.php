@@ -18,8 +18,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/demo', 'HomeController@demo')->name('home');
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/posts/create', 'PostController@create')->name('post.create');
     Route::get('/posts/{post}', 'PostController@show')->name('post.show');
+    Route::get('/posts/like/{post}', 'PostController@like')->name('post.like');
+    Route::post('/posts', 'PostController@store')->name('post.store');
+    Route::get('/posts/edit/{post}', 'PostController@edit')->name('post.edit');
+    Route::put('/posts/{post}', 'PostController@update')->name('post.update');
 });

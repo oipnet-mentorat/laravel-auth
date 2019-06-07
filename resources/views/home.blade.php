@@ -22,6 +22,7 @@
                         @endcan
                     @endforeach
                     </ul>
+                        <a href="{{ route('post.create') }}" class="btn btn-default">Creer un post</a>
                 </div>
             </div>
         </div>

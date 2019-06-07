@@ -21,6 +21,6 @@ class PostPolicy
     }
 
     public function show(?User $user, Post $post) {
-        return $user->id === 1 && $post->user_id === $user->id;
+        return true;
     }
 }

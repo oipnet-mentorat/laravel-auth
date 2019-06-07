@@ -14,7 +14,6 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except('demo');
     }
 
     /**
@@ -27,9 +26,5 @@ class HomeController extends Controller
         $posts = Post::all();
 
         return view('home', compact('posts'));
-    }
-
-    public function demo() {
-        return 'hello';
     }
 }
